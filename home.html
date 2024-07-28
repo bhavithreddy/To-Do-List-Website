@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <style>
+      /* CSS styles for the To-Do List App */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f9;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: url("./pexels-felixmittermeier-956999.jpg") no-repeat center
+          center fixed;
+        background-size: cover;
+      }
+
+      #todo-app {
+        max-width: 400px;
+        padding: 20px;
+        background: linear-gradient(135deg, #ffffff, #e3e3e3);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      #task-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      #add-button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #add-button:hover {
+        background-color: #218838;
+      }
+
+      #category-select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .task-text {
+        flex-grow: 1;
+      }
+
+      .delete-button {
+        margin-left: 10px;
+        padding: 4px 8px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .delete-button:hover {
+        background-color: #c82333;
+      }
+
+      @media (max-width: 600px) {
+        #todo-app {
+          padding: 10px;
+          box-shadow: none;
+        }
+
+        #add-button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todo-app">
+      <!-- Input field for task entry -->
+      <input type="text" id="task-input" placeholder="Enter task" />
+
+      <!-- Category dropdown -->
+      <select id="category-select">
+        <option value="">Select Category</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+      </select>
+
+      <!-- Button to add tasks -->
+      <button id="add-button">Add Task</button>
+
+      <!-- Unordered list to display tasks -->
+      <ul id="task-list"></ul>
+
+      <!-- Calendar -->
+      <div id="calendar"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <link
+      href="https://unpkg.com/fullcalendar@5.11.3/main.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/fullcalendar@5.11.3/main.min.js"></script>
+  </body>
+</html>
